@@ -29,8 +29,8 @@ jobs:
 
       - name: Install Android SDK components
         run: |
-          yes | sdkmanager --licenses >/dev/null
-          sdkmanager "platforms;android-35" "build-tools;35.0.0"
+          yes | sdkmanager --licenses
+          sdkmanager "platform-tools" "platforms;android-35" "build-tools;35.0.0"
 
       - name: Test
         run: ./gradlew --no-daemon testDebugUnitTest
