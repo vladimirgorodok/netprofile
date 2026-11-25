@@ -4,7 +4,9 @@ plugins {
     id("org.jetbrains.kotlin.plugin.compose")
 }
 
-val releaseKeystore: String? = System.getenv("KEYSTORE_PATH")
+import java.io.File
+
+val releaseKeystore: String? = System.getenv("KEYSTORE_PATH")?.takeIf { File(it).exists() }
 
 android {
     namespace = "com.example.netprofile"
