@@ -70,4 +70,5 @@ jobs:
       - name: Create GitHub release
         env:
           GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
         run: gh release create "$GITHUB_REF_NAME" NetProfile-*.apk --title "$GITHUB_REF_NAME" --generate-notes
